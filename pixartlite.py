@@ -371,6 +371,7 @@ def showPixels():
             strip.setPixelColor(i * 16 + j, Color(int(matrix[i][j][0]), int(matrix[i][j][1]), int(matrix[i][j][2])))
 
     strip.show()
+    print("Pixels updated")
 
 
 def place_3x5_num(pos, number, p_colour, s_colour):
