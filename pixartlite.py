@@ -723,8 +723,6 @@ def metaballs_loop():
 
         showPixels()
 
-        check_buttons()
-
 
 def ants_loop():
     global matrix
