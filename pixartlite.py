@@ -266,10 +266,10 @@ char_array = {"A" : [False, False, True, False, False, False, True, False, True,
 "[" : [False, True, True, True, False, False, True, False, False, False, False, True, False, False, False, False, True, False, False, False, False, True, False, False, False, False, True, False, False, False, False, True, True, True, False],
 "]" : [False, True, True, True, False, False, False, False, True, False, False, False, False, True, False, False, False, False, True, False, False, False, False, True, False, False, False, False, True, False, False, True, True, True, False],
 "^" : [False, False, True, False, False, False, True, False, True, False, True, False, False, False, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False],
-"'" : [False, False, True, True, False, False, True, False, False, False, False, True, False, False, False, True, True, True, True, False, False, True, False, False, False, False, True, False, False, True, True, False, True, True, False],
+"£" : [False, False, True, True, False, False, True, False, False, False, False, True, False, False, False, True, True, True, True, False, False, True, False, False, False, False, True, False, False, True, True, False, True, True, False],
 " " : [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False],
 "/" : [False, False, False, False, True, False, False, False, True, False, False, False, False, True, False, False, False, True, False, False, False, True, False, False, False, False, True, False, False, False, True, False, False, False, False],
-"\"" : [False, True, True, True, False, False, True, False, True, False, False, True, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+"°" : [False, True, True, True, False, False, True, False, True, False, False, True, True, True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
 }
 
 matrix = []
@@ -368,10 +368,9 @@ def showPixels():
         for j in range(len(matrix[i])):
             if i % 2 == 1:
                 j = 15 - j
-            strip.setPixelColor(i * 16 + j, Color(int(matrix[i][j][0]), int(matrix[i][j][1]), int(matrix[i][j][2])))
+            strip.setPixelColor(i * 16 + j, Color(matrix[i][j][0], matrix[i][j][1], matrix[i][j][2]))
 
     strip.show()
-    print("Pixels updated")
 
 
 def place_3x5_num(pos, number, p_colour, s_colour):
@@ -723,6 +722,8 @@ def metaballs_loop():
         time.sleep(0.028)
 
         showPixels()
+
+        check_buttons()
 
 
 def ants_loop():
